@@ -1,0 +1,301 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/** header **/
+.intro {
+    position: relative;
+    display: inline-block;
+    margin-top: 0;
+    color: #0000ff;
+}
+.intro::before,
+.intro::after {
+    content: '';
+    position: absolute;
+    display: block;
+}
+.intro::before {
+    background: #fff;
+    height: 101%;
+    z-index: -1;
+    right: -20px;
+    left: -20px;
+}
+.intro::after {
+    background: #0000ff;
+    width: 100vw;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: -2;
+}
+
+/** Section-a **/
+.section-a {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.card {
+    position: relative;
+    background: #000;
+    border: 3px solid #0000ff;
+}
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+} 
+.card::before {
+    transform: scale(0, 1);
+    border-bottom: 16px solid #fff;
+    border-top: 16px solid #fff;
+    transition: transform ease-out 500ms;
+    z-index: 1;
+}
+.card::after {
+    transform: scale(1, 0);
+    border-left: 16px solid #fff;
+    border-right: 16px solid #fff;
+    transition: transform ease-out 500ms;
+}
+.card:hover::before {
+    transform: scale(1, 1);
+} 
+.card:hover::after {
+    transform: scale(1, 1);
+}
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1;
+}
+.card:hover img {
+    opacity: 0.4;
+}
+.card-text {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.card:hover .card-text {
+    opacity: 1;
+}
+
+/** Section-b **/
+.section-card-b {
+    width: 100%;
+    height: auto;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.card-b {
+    position: relative;
+    background: #000;
+    border: 3px solid #c31;
+}
+.card-b::before,
+.card-b::after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.card-b::before {
+    transform: scale(0);
+    transition: transform ease-out 1s;
+    border-top: 3px solid #c31;
+    border-bottom: 3px solid #c31;
+}
+.card-b::after {
+    transform: scale(1, 0);
+    transition: transform ease-out 1s;
+    border-left: 3px solid rgba(204,51,17, 0.4);
+    border-right: 3px solid rgba(204,51,17, 0.4);
+}
+.card-b:hover::before {
+    transform: scale(1, 1);
+}
+.card-b:hover::after {
+    transform: scale(1, 1);
+}
+.card-b-text {
+    position: absolute;
+    color: #c31;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    transition: opacity ease-out 1s;
+}
+.card-b:hover .card-b-text {
+    opacity: 1;
+}
+.card-b img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity ease-out 1s;
+    opacity: 1;
+}
+.card-b:hover img {
+    opacity: 0.2;
+}
+
+/** section-c **/
+.section-c {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.card-c {
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+    border: 3px solid #0000ff;
+}
+.card-c::before,
+.card-c::after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.card-c::before {
+    border-top: 3px solid #0000ff;
+    opacity: 0;
+    transition: all ease-out 1s;
+    transform: translateX(800px);
+}
+.card-c:hover::before {
+    opacity: 1;
+    transform: translateX(0px);
+}
+.card-c::after {
+    border-bottom: 3px solid #0000ff;
+    opacity: 0;
+    transition: all ease-out 1s;
+    transform: translateX(-800px);
+}
+.card-c:hover::after {
+    opacity: 1;
+    transform: translateX(0px);
+}
+.card-c img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity ease-out 1s;
+}
+.card-c:hover img {
+    opacity: 0.3;
+}
+.card-c-text {
+    position: absolute;
+    color: #0000ff;
+    bottom: 1rem;
+    opacity: 0;
+    transition: all ease-out 1s;
+    transform: translateX(-800px);
+} 
+.card-c:hover .card-c-text {
+    opacity: 1;
+    transform: translateX(20px);
+}
+
+/** section-d **/
+.section-d {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.card-d {
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    border: 3px solid #ff0000;
+}
+.card-d::before,
+.card-d::after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.card-d::before {
+    opacity: 0;
+    border-top: 5px solid #ff0000;
+    border-bottom: 5px solid #ff0000;
+    transform: translateX(-800px);
+    transition: all ease-out 0.5s;
+}
+.card-d:hover::before {
+    opacity: 1;
+    transform: translateX(0px);
+}
+.card-d::after {
+    opacity: 0;
+    border-right: 5px solid #ff0000;
+    border-left: 5px solid #ff0000;
+    transform: translateY(-800px);
+    transition: all ease-out 0.5s;
+}
+.card-d:hover::after {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.card-d img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1;
+}
+.card-d:hover img {
+    opacity: 0.2;
+}
+.card-d-text {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    color: #ff0000;
+    opacity: 0;
+    transform: translateY(-800px);
+    transition: all ease-out 250ms;
+    transition-delay: 500ms;
+}
+.card-d:hover .card-d-text {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
